@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyPortfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
 <header>
     <h2 class="logo">MyPortfolio</h2>
-    <nav>
+    <nav aria-label="Main navigation">
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -17,6 +19,7 @@
         <a href="#contact">Contact</a>
     </nav>
 </header>
+<main id="main">
 
 <section class="hero">
     <div class="hero-text">
@@ -26,7 +29,7 @@
     </div>
 
     <div class="hero-img">
-        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="profile">
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Gaurav Singh profile picture">
     </div>
 </section>
 
@@ -68,12 +71,16 @@
 <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" rows="4"></textarea>
-        <button type="submit" class="send-btn">Send Message</button>
+        <label class="sr-only" for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Full Name" required>
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" type="email" placeholder="Email" required>
+        <label class="sr-only" for="message">Message</label>
+        <textarea id="message" placeholder="Message" rows="4"></textarea>
+        <button type="submit" class="send-btn" aria-label="Send message">Send Message</button>
     </form>
 </section>
+</main>
 
 <footer>
     <p>© 2025 MyPortfolio | All Rights Reserved</p>

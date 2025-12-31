@@ -140,3 +140,66 @@ footer {
     text-align: center;
     font-size: 12px;
 }
+
+/* Accessibility helpers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
+    z-index: 100;
+    transition: top .2s ease;
+}
+.skip-link:focus {
+    top: 10px;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+a:focus, button:focus, .hire-btn:focus, .skill-btn:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 20px;
+    }
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .hero-img {
+        margin-top: 20px;
+    }
+    .hero-img img {
+        width: 140px;
+    }
+    .about p {
+        width: 90%;
+    }
+    .project-cards {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .card {
+        width: calc(50% - 20px);
+    }
+    .contact form {
+        width: 90%;
+    }
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+}
