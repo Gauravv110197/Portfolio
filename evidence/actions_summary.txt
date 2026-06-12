@@ -1,0 +1,16 @@
+Evidence Package — GitHub Actions / Pages deployment summary
+
+Summary:
+- A GitHub Actions workflow named `deploy-pages.yml` was added (commit: b5e21d91). The workflow runs Pages build and deploy jobs on pushes to `main`.
+- Public workflow run status: successful (reported earlier when we inspected runs). The Pages site published successfully to https://gauravv110197.github.io/Portfolio/.
+
+What to attach if Google asks for logs:
+- The full workflow run log (downloadable from the Actions UI by repository owner or user with repo access). Steps:
+  1) Go to https://github.com/Gauravv110197/Portfolio/actions
+  2) Select the workflow run matching the date/time when the site was deployed
+  3) Click "Download log" (this requires you to be signed in and have access)
+- If you want me to fetch logs directly, I will need a short-lived Personal Access Token (PAT) with `repo` scope (or `repo` + `workflow`) so I can request run artifacts and logs via the API. For privacy, generate a PAT for a short time and then revoke it after I fetch the logs.
+
+Notes:
+- The workflow contains `id-token: write` which is normal for Pages/OIDC flows and not suspicious by itself.
+- If Google requests precise timing (timestamps or the run number), I can add them to this file once you give access to the specific run logs or paste the run link here.

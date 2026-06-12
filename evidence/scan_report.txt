@@ -1,0 +1,25 @@
+Evidence Package — Repository scan report
+
+Scan date: 2025-12-31
+
+Search patterns checked (examples):
+- `eval(`, `atob(`, `data:text`, `base64,`, `-----BEGIN PRIVATE KEY-----`, `api_key`, `password`, `token`, `credential`
+
+Summary of findings:
+- No suspicious obfuscated JavaScript (no `eval()` or `atob()` patterns found in repository files).
+- No inline `data:text/html` or large base64 blobs present in the codebase.
+- No private key PEM markers (`-----BEGIN PRIVATE KEY-----`) found.
+- No obvious plain-text API keys or tokens found by the basic string scan.
+- The only matched pattern was inside `.github/workflows/deploy-pages.yml` (the Actions workflow includes `id-token: write` which is a standard Pages/Actions setting for OIDC; this is expected and not suspicious by itself).
+
+Commands performed locally (for your reproducibility):
+- `git show <SHA>` for commits in evidence/commits.txt
+- `git grep -n "eval\(|atob\(|data:text|base64,|-----BEGIN PRIVATE KEY-----|api_key|password|token|credential" -- '**/*'`
+- Consider running external scanners for deeper checks:
+  - `trufflehog --regex --entropy=True --rules trufflehog_rules.json file://<repo>`
+  - `git-secrets` with `git secrets --scan` and `git-secrets --scan-history`
+
+Interpretation & next steps:
+- Based on the scans above, there is no obvious malicious code or cloaking in the repository or in the raw `index.html`.
+- The `id-token: write` field in the workflow is expected for Pages deployment; it is not an indicator of phishing.
+- If Google requests more detailed logs (e.g., full Actions log output and timestamps), we will need either an authenticated fetch (PAT) or you can manually download the job logs from the Actions run page and attach them.

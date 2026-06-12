@@ -1,0 +1,21 @@
+Evidence Package — Commits
+
+Collected top commits (most recent first):
+
+1) 485e3002e03c5a9d577ba23b547a78a743ad1cf3 — Add Google Search Console verification tag — 2025-12-31T14:59:23Z
+2) b5e21d91dbd8e2ba1a21df15a7e99da3c3a5e498 — Add GitHub Actions workflow for Pages deployment and README with live URL — 2025-12-31T14:25:24Z
+3) 6d8c8fdc19c9847d7c3e0492a168ce42f3499ee4 — Add responsiveness and accessibility improvements — 2025-12-31T14:23:37Z
+4) dc390825f78241af103a63048e36fc0328a394c0 — Update HTML and CSS — 2025-12-31T14:21:08Z
+5) eeedb0451d37731ba4be69b299ab4f22ae1738fb — Resolve merge conflicts and finalize files — 2025-12-31T14:16:40Z
+6) f3ddd2a58dd965a8fbbcd3f4564dc2a609066aa6 — Rename folder — 2025-12-31T14:00:28Z
+7) 8fdb9975fdc74efacace79faa147d4259696a6dc — Add files via upload — 2025-12-31T14:02:49Z
+8) b5e8e6bc6c8bd6f5129de391ee0d8c306e49b0b9 — portfolio first commit — 2025-12-31T13:35:30Z
+
+Suggested commands to generate diffs and context:
+- To see full commit details: `git show <SHA>`
+- To see file changes for a commit: `git show --name-status <SHA>`
+- To generate a patch: `git format-patch -1 <SHA>`
+- To show full commit range diffs: `git diff <older-sha>..<newer-sha>`
+
+Notes:
+- Include these SHAs in any external request to Google Search Console or support; they prove the exact repository state at the time of the request.

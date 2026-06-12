@@ -1,0 +1,29 @@
+Prepared message for Google Search Console (Security Review)
+
+Subject: Request for re-review — site formerly flagged as "Deceptive pages"
+
+Hello Google Search Console team,
+
+We recently discovered that our GitHub Pages site (https://gauravv110197.github.io/Portfolio/) is flagged as "Deceptive pages" by Safe Browsing. We take this seriously and have performed the following remediation and verification steps prior to this request:
+
+1) Added Google Search Console verification meta tag to `index.html` (commit: 485e3002e03c5a9d57...) on 2025-12-31 to allow verification of ownership.
+2) Ensured the site content is static HTML/CSS only (no server-side redirects or cloaking observed). The raw `index.html` in the repository matches the deployed Pages content.
+3) Added a GitHub Actions workflow (`.github/workflows/deploy-pages.yml`, commit: b5e21d91...) to publish via Pages and confirmed successful build & deploy runs.
+4) Performed automated repository scans for suspicious content (search for `eval(`, `atob(`, `data:text`, large base64 blobs, `-----BEGIN PRIVATE KEY-----`, and common token patterns) — no suspicious matches found; only expected workflow settings such as `id-token: write` were present.
+5) Captured evidence (attached):
+   - `commits.txt` — list of commits and SHAs proving the current repo state.
+   - `repo_index_raw.html` — raw `index.html` from the repository (contains the verification meta tag).
+   - `site_snapshot_browser.html` — snapshot of the deployed Pages content as fetched 2025-12-31.
+   - `scan_report.txt` — a short report on repository scans performed.
+   - `actions_summary.txt` — summary of the Pages workflow and instructions to retrieve full logs on request.
+
+Request:
+- Please re-evaluate the site and remove the "Deceptive pages" flag if no issue is found. If you require further logs, exact timestamps, or the full Actions run logs, we can provide them immediately (we can fetch and attach full workflow logs upon request; please specify the run or accept the logs attached).
+
+If you need any additional information or access to deeper logs, please tell us which specific artifacts are required and we will provide them.
+
+Thank you for your time and assistance.
+
+Sincerely,
+Gaurav Singh
+Owner / Maintainer — https://github.com/Gauravv110197/Portfolio
